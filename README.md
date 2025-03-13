@@ -41,7 +41,7 @@ Things still working on currently...
 - Working on an update information where user can update their account information and update their income or late information.
 - Working on an owner of page where the owner can review approved applications and set the approved amount of credit.
 
-  ***Notes**
+***Notes**
 
   Must npm to get the dependencies and run the flask first before running the node. 
 
