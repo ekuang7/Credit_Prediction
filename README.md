@@ -27,6 +27,7 @@ In the frontend there are express handlebars pages that login, register, logout,
 - Javascript: Javascript was used to do the login, register backend as well as the backend routes. 
 - CSS: CSS was used to style frontend pages for the UI. 
 - HTML/express handlebars
+- MongoDB: MongoDB was used to store information about the user.
 - Flask: Flask was used to handle the backend route /predict where the model was saved using joblib into a pkl file to loaded back when /predict flask backend api is used to predict an output to send back to the frontend.
 
 ##Still Working On
