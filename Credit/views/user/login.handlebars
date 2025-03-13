@@ -1,0 +1,23 @@
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../public/css/main.css">
+</head>
+<body id="login_page">
+    <header>
+        <h1 id="login-head">Login</h1>
+        <a id="login-main" href="/">Home</a>
+        <a id="register-back" href="/user/register">Register</a>
+    </header>
+    <form id="login-form" method="POST" action="/user/login">
+        <label for="loginuser">Username: 
+            <input id="loginuser" type="text" name="loginuser" required>
+        </label>
+        <label for="passworduser">Password: 
+            <input id="passworduser" type="password" name="passworduser" required>
+        </label>
+        <button type="submit" id="register-button">Login</button>
+    </form>
+    {{#if errorlogin}}
+        <p id="errorlogin">{{errorlogin}}</p>
+    {{/if}}
+</body>

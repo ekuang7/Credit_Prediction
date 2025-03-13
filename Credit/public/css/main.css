@@ -1,0 +1,243 @@
+#main_title{
+    
+    position: fixed;
+    top: 5px;
+    left: 600px;
+    
+}
+
+#main_info{
+    position:fixed;
+    top: 100px;
+    left: 350px;
+}
+
+#credit_info{
+    position:fixed;
+    top: 5px;
+    left: 600px
+}
+
+#credit_statement{
+    position:fixed;
+    top: 75px;
+    left: 450px
+}
+
+#revolving{
+    position: fixed;
+    top: 200px;
+    left: 250px
+}
+
+#age{
+    position: fixed;
+    top: 200px;
+    left: 650px
+}
+
+#first_late{
+    position: fixed;
+    top: 200px;
+    left: 1050px
+}
+
+#ratio{
+    position: fixed;
+    top: 300px;
+    left:250px
+}
+
+#income{
+    position: fixed;
+    top: 300px;
+    left: 650px
+}
+ #credit{
+    position: fixed;
+    top: 300px;
+    left:1050px
+ }
+
+ #third_late{
+    position: fixed;
+    top: 400px;
+    left: 250px
+ }
+
+ #realestate{
+    position:fixed;
+    top: 400px;
+    left:650px
+ }
+
+ #second_late{
+    position: fixed;
+    top:400px;
+    left: 1050px
+ }
+
+#info_submit{
+    position:fixed;
+    top: 480px;
+    left: 650px;
+    width: 150px;
+    height:50px
+}
+
+#approved_body{
+    min-height:100vh;
+    background-repeat: no-repeat;
+    background-image: url("../images/congrats.gif");
+    background-position: center ;
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed
+} 
+
+#logout_link1{
+    position:fixed;
+    top: 480px;
+    left: 650px;
+    
+}
+
+#logout1{
+    width:100px;
+    height:20px
+}
+
+#logout_link2{
+    position:fixed;
+    top: 480px;
+    left: 650px;
+    
+}
+
+#logout2{
+    width:100px;
+    height:20px
+}
+
+#info_body{
+    background-color: azure;
+}
+
+#main-body{
+    background-color: orange;
+}
+
+#main-body{
+    min-height: 100vh;
+    background-image: url("../images/main_page.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed
+    
+}
+
+
+#approved_title{
+    position: fixed;
+    top: 25px;
+    left: 600px;
+    color: white
+
+}
+
+#approved_info{
+    position: fixed;
+    top: 100px;
+    left:400px;
+    color: white
+}
+
+#declined_title{
+    position: fixed;
+    top: 25px;
+    left: 600px;
+
+}
+
+#declined_info{
+    position: fixed;
+    top: 100px;
+    left: 450px;
+}
+
+#declined_body{
+    background-color: darkcyan;
+}
+
+#main_login{
+    position:fixed;
+    top: 500px;
+    left: 500px;
+    width: 200px;
+    height:50px
+}
+
+#main_register{
+    position:fixed;
+    top: 500px;
+    left: 800px;
+    width: 200px;
+    height:50px
+}
+
+#login_page{
+    background-color:gold
+}
+
+#login-head{
+    text-align: center;
+}
+
+#login-form{
+    position: fixed;
+    top:300px;
+    left: 500px;
+}
+
+#login-back{
+    position:fixed;
+    left: 700px;
+}
+
+#register-user{
+    text-align: center;
+}
+
+#register_body{
+    background-color: gold;
+}
+
+#register-form{
+    position: fixed;
+    top:300px;
+}
+
+#register-button{
+    position: fixed;
+    top:350px;
+    left:600px;
+    width: 150px;
+    height:50px
+}
+
+#register-back{
+    position:fixed;
+    left: 690px;
+}
+
+#login-main{
+    position:fixed;
+    left: 625px;
+}
+
+#register-main{
+    position:fixed;
+    left: 650px;
+}

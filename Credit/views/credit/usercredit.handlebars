@@ -1,0 +1,40 @@
+<head>
+    <title>Credit Information</title>
+    <link rel="stylesheet" href="../public/css/main.css">
+</head>
+<body id="info_body">
+    <header>
+        <h1 id="credit_info">Welcome {{firstname}}!</h1>
+        <p id="credit_statement">Please Enter Your Info in the Provided Form for a Credit Decision.</p>
+    </header>
+    <form id="input_form" name="input_form" method="POST" action="/credit/usercredit">
+        <label for="utilization" id="revolving">Revolving Credit:
+            <input type="number" step="0.01" id="utilization" name="utilization" required>
+        </label>
+        <label for="age_input" id="age">Age:
+            <input type="number" id="age_input" name="age_input" required>
+        </label>
+        <label for="late1" id="first_late">Number of 30-59 days Late:
+            <input type="number" id="late1" name="late1" required>
+        </label>
+        <label for="debt_ratio" id="ratio">Debt Ratio:
+            <input type="number" step="0.01" id="debt_ratio" name="debt_ratio" required>
+        </label>
+        <label for="monthly_income" id="income">Monthly Income:
+            <input type="number" id="monthly_income" name="monthly_income" required>
+        </label>
+        <label for="num_credit" id="credit">Number of Credit:
+            <input type="number" id="num_credit" name="num_credit">
+        </label>
+        <label for="late3" id="third_late">Number of 90 days Late:
+            <input type="number" id="late3" name="late3">
+        </label>
+        <label for="num_realestate" id="realestate">Number of Real Estate:
+            <input type="number" id="num_realestate" name="num_realestate">
+        </label>
+        <label for="late2" id="second_late">Number of 60-89 days Late:
+            <input type="number" id="late2" name="late2">
+        </label>
+        <button type="submit" id="info_submit" name="info_submit">Submit</button>
+    </form>
+</body>
