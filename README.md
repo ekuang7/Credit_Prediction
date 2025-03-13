@@ -39,7 +39,11 @@ In the frontend there are express handlebars pages that login, register, logout,
 Things still working on currently...
 - Working on a visualization page that display the users so far denied and approved.
 - Working on an update information where user can update their account information and update their income or late information.
-- Working on an owner of page where the owner can review approved applications and set the approved amount of credit. 
+- Working on an owner of page where the owner can review approved applications and set the approved amount of credit.
+
+  ***Notes**
+
+  Must npm to get the dependencies and run the flask first before running the node. 
 
 
   
