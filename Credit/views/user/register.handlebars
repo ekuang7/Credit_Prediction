@@ -27,11 +27,12 @@
         <label for="lastname">Last Name: 
             <input type="text" id="lastname" name="lastname" required>
         </label>
-        <button id="register-button" type="submit" id="registerbutton" name="registerbutton">Register</button>
+        <button id="register-button" type="submit"  name="register-button">Register</button>
 
     </form>
+    <a id="summary1" href="../credit/info">Go to Summary</a>
     {{#if errorregistermessage}}
-        <p id="errorregister" name="errorregister">{{errorregistermessage}}</p>
+        <p id="errorregister">{{errorregistermessage}}</p>
     {{/if}}
     
 </body>
