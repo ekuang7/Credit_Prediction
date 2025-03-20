@@ -95,26 +95,43 @@
     position: fixed
 } 
 
-#logout_link1{
+
+
+#errorregister{
     position:fixed;
-    top: 480px;
-    left: 650px;
-    
+    top:200px;
+    left:500px
+}
+
+#errorlogin{
+    position:fixed;
+    top:200px;
+    left:600px
+}
+
+#summary1{
+    position:fixed;
+    left:750px
+}
+
+#summary2{
+    position:fixed;
+    left:770px
 }
 
 #logout1{
     width:100px;
-    height:20px
+    height:20px;
+    position:fixed;
+    top: 480px;
+    left: 650px
 }
 
-#logout_link2{
+
+#logout2{
     position:fixed;
     top: 480px;
     left: 650px;
-    
-}
-
-#logout2{
     width:100px;
     height:20px
 }
@@ -161,10 +178,62 @@
 
 }
 
+
 #declined_info{
     position: fixed;
     top: 100px;
     left: 450px;
+}
+
+#info_title{
+    position: fixed;
+    top: 25px;
+    left: 600px;
+}
+
+#info_info{
+    position: fixed;
+    top: 100px;
+    left: 525px;
+}
+
+
+
+#histogram{
+    position:fixed;
+    top: 200px
+}
+
+#boxplot{
+    position:fixed;
+    top:200px;
+    left:1000px
+}
+
+#summary_stat{
+    position:fixed;
+    top:200px;
+    left: 600px
+}
+
+#summary_info{
+    font-weight: bold;
+}
+
+#link_info{
+    position:fixed;
+    top:500px;
+    left: 600px
+}
+
+#link_main{
+    position:fixed;
+    top:75px;
+    left: 650px
+}
+
+#stat_body{
+    background-color: aquamarine;
 }
 
 #declined_body{
@@ -241,3 +310,4 @@
     position:fixed;
     left: 650px;
 }
+
