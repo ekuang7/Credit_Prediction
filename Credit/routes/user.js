@@ -87,7 +87,8 @@ router
             req.session.user = {
                 username: user.username,
                 firstname : user.firstname,
-                status :user.status
+                status :user.status,
+                email:user.email
             }
             
         
