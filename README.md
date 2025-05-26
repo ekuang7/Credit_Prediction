@@ -16,6 +16,7 @@ This credit app allows users to have their own personal account with register an
 These inputs are inputted from the frontend by the user and axios sends it to a flask backend where a trained model uses those inputs and predict if the user is risky or not and sends it back to express and 
 - Display the approved page if the user is deemed not at risk.
 - Display declined page if user is at risk.
+- Sends an automated approved or declined email to the user's email depending if the user was approved or declined.
 
 ***Data and Modeling***
 
@@ -39,11 +40,6 @@ In the frontend there are express handlebars pages that login, register, logout,
 - Flask: Flask was used to handle the backend route /predict where the model was saved using joblib into a pkl file to loaded back when /predict flask backend api is used to predict an output to send back to the frontend. Flask was also used to handle the data sent from express to flask to process the data of incomes and approved and denied and doing the visualization using seaborn plots and saving them so they can be used in the information of summary statistics page.
   
 
-***Still Working On***
-
-Things still working on currently...
-- Working on an update information where user can update their account information and update their income or late information.
-- Working on an owner of page where the owner can review approved applications and set the approved amount of credit.
 
 ***Notes**
 
