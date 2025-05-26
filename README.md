@@ -24,7 +24,7 @@ The data that was used to train and test the model was the givemesomecredit data
 
 ***Visualization and Summary Statistics***
 
-An information page shows how many applicants were approved and denied and the distribution of the monthly income of those approved and denied. The data is sent to flask for processing to do the visualization and saves the figures and serve them on the frontend. It resaves everytime information is changed to make it dynamic. Summary statistics of the applicants is also display on the page. It gives the statistics of the total applicants, how many were approved and denied, the mean and the median of the monthly income of those approved and denied. 
+An information page shows how many applicants were approved and denied and the distribution of the monthly income of those approved and denied. The data is sent to flask for processing to do the visualization and saves the figures and serve them on the frontend. It resaves everytime information is changed to make it dynamic. Summary statistics of the applicants is also display on the page. It gives the statistics of the total applicants, how many were approved and denied, the mean and the median of the monthly income of those approved and denied. If there is no user data, then it will just display no data text instead.
 
 ***Frontend***
 
