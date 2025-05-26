@@ -41,7 +41,7 @@ In the frontend there are express handlebars pages that login, register, logout,
   
 
 
-***Notes**
+**Notes**
 
   Must npm to get the dependencies and run the flask app first before running the node. Also, you will need to create .env file with your own email configurations to automatically    send emails after the model predicts approved or declined. 
 
