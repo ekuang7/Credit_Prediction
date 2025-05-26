@@ -2,6 +2,8 @@ import {Router} from 'express';
 import axios from 'axios';
 import cors from 'cors';
 import {update_status, getAll, average, median} from '../data/user.js';
+import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
 
 const router=Router();
 
@@ -14,7 +16,7 @@ router.route('/approved')
         }
         else{
             if(req.session.user.status===0){
-                return res.render('credit/approved', {firstname: req.session.user.firstname});
+                return res.render('credit/approved', {firstname: req.session.user.firstname, amount:req.session.user.amount});
             }
             else if(req.session.user.status===1){
                 return res.redirect('/credit/declined');
@@ -86,18 +88,55 @@ router.route('/usercredit')
 .post(async(req,res)=>{
     
     const data=req.body;   //Get input data from frontend
+    const email = req.session.user.email;
     const income = Number(req.body.monthly_income);
     const response = await axios.post('http://localhost:5002/predict', data); //Send data to flask /predict /route/endpoint.
     
-    if(response.data.prediction===0){
+    //Use nodemailer to send automated approved and denied email when the model predicts and return results.
+    const transporter = nodemailer.createTransport({
+        service:'gmail',
+        auth:{
+            user:process.env.ADMIN_EMAIL,
+            pass:process.env.ADMIN_PASSWORD,
+        },
+    });
+    const approvedMail = {
+        from: process.env.ADMIN_EMAIL,
+        to: email,
+        subject: 'Your Application Status',
+        text: `Hello ${req.session.user.firstname}, \n\nCongratulations! you have been approved for a line of credit. You will receive an email in 10-14 business days for more information about your new line of credit.\n\nBest, \nThe Admin Team.`
+    }
 
+    const declinedMail={
+        from:process.env.ADMIN_EMAIL,
+        to:email,
+        subject:'Your Application Status',
+        text:`Hello ${req.session.user.firstname}, \n\nUnfortunately, we were unable to approve you for a line of credit at this time. You will receive another email in 10-14 business days for more information about our decision. \n\nThank you, \nThe Admin Team.`
+    }
+
+    if(response.data.prediction===0){
+        
         const updated = await update_status(req.session.user.username, response.data.prediction, income);  //Call update_status to update user approval status predicted from model from flask and their income inputted.
         req.session.user.status=0;
+        try{
+            await transporter.sendMail(approvedMail);
+        }
+        catch(error){
+            console.error('Email did not send.', error);
+        }
+        
+
         return res.redirect('/credit/approved');
     }
     if(response.data.prediction===1){
         req.session.user.status=1;
         const updated = await update_status(req.session.user.username, response.data.prediction, income);
+        try{
+            await transporter.sendMail(declinedMail);
+        }
+        catch(error){
+            console.error('Email did not send.', error);
+        }
         return res.redirect('/credit/declined');
         
     }
@@ -111,6 +150,10 @@ router.route('/usercredit')
 router.route('/info')
 .get(async(req,res)=>{
     const information = await getAll();
+    
+    if(information.denied.length===0 && information.approved.length===0){
+        return res.render('credit/info', {"text":'No data yet.'});
+    }
     
     const total_approved = information.approved.length;
     const mean_approved = await average(information.approved);
@@ -126,12 +169,11 @@ router.route('/info')
     const denied = {"denied":information.denied};
     const respond = await axios.post('http://localhost:5002/visualize', {"data":data, "approved":approved, "denied":denied});
     
-    res.render('credit/info', {total: total, approved:total_approved, denied:total_denied , approved_avg:mean_approved.mean, denied_avg: mean_denied.mean, approved_med: median_approved.median, denied_med: median_denied.median});
+    return res.render('credit/info', {total: total, approved:total_approved, denied:total_denied , approved_avg:mean_approved.mean, denied_avg: mean_denied.mean, approved_med: median_approved.median, denied_med: median_denied.median});
 })
 
 
 export default router
-
 
 
 
