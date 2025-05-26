@@ -135,6 +135,8 @@ export const createUser = async(
 
     const income=null;
 
+    
+
     //Income and status initially empty/null. Will be input by user.
     let newuser={
         "username": username,
@@ -288,7 +290,7 @@ export const login = async(
         throw 'Log in credentials is invalid.';
     }
 
-    return {username: founduser.username, firstname: founduser.firstname, status: founduser.status, income:founduser.income};
+    return {username: founduser.username, firstname: founduser.firstname, status: founduser.status, income:founduser.income, email:founduser.email};
 
 }
 
