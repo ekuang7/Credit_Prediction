@@ -7,18 +7,23 @@
         <h1 id="info_title">Statistics of Applicants</h1>
         <p id="info_info">These are some basic information of previously applied applicants.</p>
     </header>
-    <img id="histogram" src="../../public/images/visualize.png" width="400" height="400" alt="Histogram of Approved and Denied">
-    <img id="boxplot" src="../../public/images/visualize2.png" width="400" height="400" alt="Boxplot of Income">
-    <div id="summary_stat">
-        <p id="summary_info">Summary Statistics:</p>
-        <p id="total">Total Applicants: {{total}}</p>
-        <p id="approve">Total Approved: {{approved}}</p>
-        <p id="a_avg">Approved Average: {{approved_avg}}</p>
-        <p id="a_med">Approved Median: {{approved_med}}</p>
-        <p id="denied">Total Denied: {{denied}}</p>
-        <p id="d_avg">Denied Average: {{denied_avg}}</p>
-        <p id="d_med">Denied Median: {{denied_med}}</p>
-    </div>
+        {{#if text}}
+            <p id="no_data_text">{{text}}</p>
+        {{else}}
+            <img id="histogram" src="../../public/images/visualize.png" width="400" height="400" alt="Histogram of Approved and Denied">
+            <img id="boxplot" src="../../public/images/visualize2.png" width="400" height="400" alt="Boxplot of Income">
+            <div id="summary_stat">
+                <p id="summary_info">Summary Statistics:</p>
+                <p id="total">Total Applicants: {{total}}</p>
+                <p id="approve">Total Approved: {{approved}}</p>
+                <p id="a_avg">Approved Average: {{approved_avg}}</p>
+                <p id="a_med">Approved Median: {{approved_med}}</p>
+                <p id="denied">Total Denied: {{denied}}</p>
+                <p id="d_avg">Denied Average: {{denied_avg}}</p>
+                <p id="d_med">Denied Median: {{denied_med}}</p>
+            </div>
+        {{/if}}
+   
     <a id="link_info" href="/">Go Back to Main</a>
 
 </body>
