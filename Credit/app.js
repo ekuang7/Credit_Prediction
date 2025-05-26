@@ -5,6 +5,8 @@ import exphbs from 'express-handlebars';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const rewriteUnsupportedBrowserMethods = (req, res, next) => {
