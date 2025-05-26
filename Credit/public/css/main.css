@@ -185,6 +185,13 @@
     left: 450px;
 }
 
+#no_data_text{
+    position: fixed;
+    top: 300px;
+    left: 550px;
+    font-size:34px
+}
+
 #info_title{
     position: fixed;
     top: 25px;
