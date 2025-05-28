@@ -13,10 +13,12 @@ This credit app allows users to have their own personal account with register an
 - Number of credit lines opened
 - Number of mortgages 
 
-These inputs are inputted from the frontend by the user and axios sends it to a flask backend where a trained model uses those inputs and predict if the user is risky or not and sends it back to express and 
+These inputs are inputted from the frontend by the user and axios sends it to a flask backend where a trained machine learning model uses those inputs and predict if the user is risky or not and sends it back to express and 
 - Display the approved page if the user is deemed not at risk.
 - Display declined page if user is at risk.
 - Sends an automated approved or declined email to the user's email depending if the user was approved or declined.
+
+The App also has a contact page where users can contact the owner by filling out a form on frontend including their name, contact email, and their message. The input gets sent to the backend where it is sent to a support email of the owner using nodemailer and display a simple thank you message with the timeframe the owner will respond in.
 
 ***Data and Modeling***
 
@@ -28,7 +30,7 @@ An information page shows how many applicants were approved and denied and the d
 
 ***Frontend***
 
-In the frontend there are express handlebars pages that login, register, logout, error, input for credit, approved and declined page. Express routes are used to handle inputs in the frontend, sending input to flask and receiving a response back etc. 
+In the frontend there are express handlebars pages that login, register, logout, error, input for credit, approved and declined page. Express routes are used to handle inputs in the frontend, sending input to flask and receiving a response back etc. AJAX based client side javascript is used to create the interactive contact page.
 
 ***Technologies Used***
 
