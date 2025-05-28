@@ -21,7 +21,19 @@
 #credit_statement{
     position:fixed;
     top: 75px;
-    left: 450px
+    left: 500px
+}
+
+#fill-main{
+    position:fixed;
+    top: 125px;
+    left: 640px
+}
+
+#fill-contact{
+    position:fixed;
+    top: 125px;
+    left: 710px
 }
 
 #revolving{
@@ -111,12 +123,12 @@
 
 #summary1{
     position:fixed;
-    left:750px
+    left:700px
 }
 
 #summary2{
     position:fixed;
-    left:770px
+    left:750px
 }
 
 #logout1{
@@ -131,7 +143,7 @@
 #logout2{
     position:fixed;
     top: 480px;
-    left: 650px;
+    left: 750px;
     width:100px;
     height:20px
 }
@@ -171,6 +183,20 @@
     color: white
 }
 
+#approved_main{
+    position: fixed;
+    top: 165px;
+    left:625px;
+    color: white
+}
+
+#approved_contact{
+    position: fixed;
+    top: 165px;
+    left:725px;
+    color: white
+}
+
 #declined_title{
     position: fixed;
     top: 25px;
@@ -184,6 +210,19 @@
     top: 100px;
     left: 450px;
 }
+
+#declined_main{
+    position: fixed;
+    top: 165px;
+    left: 700px;
+}
+
+#declined_contact{
+    position: fixed;
+    top: 165px;
+    left: 800px;
+}
+
 
 #no_data_text{
     position: fixed;
@@ -236,7 +275,7 @@
 #link_main{
     position:fixed;
     top:75px;
-    left: 650px
+    left: 600px
 }
 
 #stat_body{
@@ -279,7 +318,7 @@
 
 #login-back{
     position:fixed;
-    left: 700px;
+    left: 640px;
 }
 
 #register-user{
@@ -305,16 +344,121 @@
 
 #register-back{
     position:fixed;
-    left: 690px;
+    left: 670px;
 }
 
 #login-main{
     position:fixed;
-    left: 625px;
+    left: 600px;
 }
 
 #register-main{
     position:fixed;
-    left: 650px;
+    left: 575px;
+}
+
+#contact-head{
+    position: fixed;
+    top: 15px;
+    left: 600px;
+}
+
+#contact-main{
+    position: fixed;
+    top: 85px;
+    left: 550px;
+}
+
+#contact-register{
+    position: fixed;
+    top: 85px;
+    left: 605px;
+}
+
+#contact-login{
+    position: fixed;
+    top: 85px;
+    left: 675px;
+}
+
+#contact-summary{
+    position: fixed;
+    top: 85px;
+    left: 725px;
+}
+
+#contact-head2{
+    position: fixed;
+    top: 175px;
+    left: 600px;
+}
+
+#response{
+    position: fixed;
+    top: 250px;
+    left: 400px;
+}
+
+
+
+#contact_name{
+    position: fixed;
+    top: 175px;
+    left: 400px;
+}
+
+#contact_email{
+    position: fixed;
+    top: 175px;
+    left: 800px;
+}
+
+#contact-content{
+    position: fixed;
+    top: 250px;
+    left: 475px;
+}
+
+.contact_content{
+    position: fixed;
+    top: 225px;
+    left: 475px;
+}
+
+#contact-button{
+    position: fixed;
+    top: 480px;
+    left: 700px;
+}
+
+.check_label{
+    position: fixed;
+    top: 300px;
+    left: 125px;
+    
+}
+
+#check{
+    position: fixed;
+    top: 350px;
+    left: 184px;
+    width: 34px;
+    height: 34px;
+}
+
+#login-contact{
+    position:fixed;
+    left:875px
+}
+
+#link_contact{
+    position:fixed;
+    top:75px;
+    left: 800px
+}
+
+#register-contact{
+    position:fixed;
+    left: 825px;
 }
 
