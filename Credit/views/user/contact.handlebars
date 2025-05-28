@@ -1,0 +1,42 @@
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../public/css/main.css">
+</head>
+<body id="contact_page">
+    <header>
+        <h1 id="contact-head">Contact Us</h1>
+        <a id="contact-main" href="/">Home</a>
+        <a id="contact-register" href="../user/register">Register</a>
+        <a id="contact-login" href="../user/login">Login</a>
+        <a id="contact-summary" href="../credit/info">Summary Statistics</a>
+    </header>
+    <h2 id="contact-head2" hidden>Response</h2>
+    <p id="response" hidden></p>
+    <h2 id="error-head" hidden>Error</h2>
+    <p id="error-contact" hidden></p>
+    <div id="box">
+        <label id="check-label" class="check_label" for="check">Confirm You Are a Human:
+            <input type="checkbox" id="check">
+        </label>
+    </div>
+    <form id="contact-form" method="POST" action="/user/contact">
+        <div id="contact_name">
+            <label for="contact-name">Name:
+                <input id="contact-name" type="text" name="contact-name" placeholder="Full Name" required>
+            </label>
+        </div>
+        <div id="contact_email">
+            <label for="contact-email">Email:
+                <input id="contact-email" type="email" name="contact-email" placeholder="example@email.com" required>
+            </label>
+        </div>
+        <div id="contact_content">
+            <label for="contact-content" class="contact_content">Message:
+                <textarea id="contact-content" name="contact-content" rows="12" cols="60" placeholder="Type your message..." required></textarea>
+            </label>
+        </div>
+        <button id="contact-button" type="submit">Send</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/validator@13.9.0/validator.min.js"></script>
+    <script src="../public/js/contact.js"></script>
+</body>
