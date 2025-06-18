@@ -12,6 +12,45 @@
     left: 350px;
 }
 
+#admin{
+    position: fixed;
+    top: 5px;
+    left: 600px;
+}
+
+#admin_body{
+    position: fixed;
+    top: 100px;
+    
+}
+
+#logout_admin{
+    width:100px;
+    height:20px;
+    position:fixed;
+    top: 480px;
+    left: 650px
+}
+
+#admin_main{
+position: fixed;
+    top: 84px;
+    left:600px;
+}
+
+#admin_summary{
+    position: fixed;
+    top: 84px;
+    left:650px; 
+}
+
+#logout_usercredit{
+    position:fixed;
+    top: 575px;
+    left: 700px;
+
+}
+
 #credit_info{
     position:fixed;
     top: 5px;
