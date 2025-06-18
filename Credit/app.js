@@ -6,7 +6,10 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import {createUser, checkAdmin} from './data/user.js';
 dotenv.config();
+
+
 
 
 const rewriteUnsupportedBrowserMethods = (req, res, next) => {
@@ -38,6 +41,14 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+let check = await checkAdmin();
+
+//Seeding to create admin account if it doesn't exist.
+if(check.exist===false){
+    await createUser("admin", process.env.SECRET_PASSWORD, process.env.SECRET_PASSWORD, process.env.ADMIN_EMAIL, "Admin", "Secret");
+      
+}
 
 configRoutes(app);
 
