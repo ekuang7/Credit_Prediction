@@ -20,7 +20,7 @@ These inputs are inputted from the frontend by the user and axios sends it to a 
 
 The App also has a contact page where users can contact the owner by filling out a form on frontend including their name, contact email, and their message. The input gets sent to the backend where it is sent to a support email of the owner using nodemailer and display a simple thank you message with the timeframe the owner will respond in.
 
-The app also has an owner's page where only the owner is allowed to access this page. Regular users trying to access this page will be redirected to a forbidden page. For the owner, this page will display the approved applicants, the denied applicants and the ones that didn't apply yet. It will display information about the person such as full name, email address, and income in each of the categories above (approved, denied, not yet applied).
+The app also has an owner's page where only the owner is allowed to access this page. Regular users trying to access this page will be redirected to a forbidden page. For the owner, this page will display the approved applicants, the denied applicants and the ones that didn't apply yet. It will display information about each person such as full names, email addresses, and incomes in each of the categories above (approved, denied, not yet applied).
 
 ***Data and Modeling***
 
