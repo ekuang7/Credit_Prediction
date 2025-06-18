@@ -297,7 +297,7 @@ export const login = async(
 //Get approval income and denied income and status data.
 export const getAll = async()=>{
     const userCollection = await user();
-    const data = await userCollection.find().toArray();
+    const data = await userCollection.find({"username":{$ne:"admin"}}).toArray();
     const all = data.map((x)=>x.status);
     const approved = await userCollection.find({"status": 0}, {projection:{"income":1}}).toArray();
     const approved2= approved.map((x)=>x.income);
@@ -374,6 +374,40 @@ export const median = async(arr)=>{
         return {median:median};
         
     }
+
+
+}
+
+//Get first name, last name and email of approved.
+export const getApproved = async()=>{
+    let userCollection = await user();
+    let data = await userCollection.find({"status":0}, {projection:{"_id":0, "firstname":1, "lastname":1, "email":1, "income":1}}).toArray();
+    return{approved:data};
+}
+
+//Get first name, last name, and email of approved.
+export const getDenied = async()=>{
+    let userCollection = await user();
+    let data = await userCollection.find({"status":1}, {projection:{"_id":0, "firstname":1, "lastname":1, "email":1, "income":1}}).toArray();
+    return{denied: data};
+}
+
+//Get first name, last name and email of not applied customers.
+export const notApplied = async()=>{
+    let userCollection = await user();
+    let data = await userCollection.find({"status":"", "username":{$ne:"admin"}}, {projection:{"_id":0, "firstname":1, "lastname":1, "email":1, "income":1}}).toArray();
+    return {none:data};
+}
+
+//Function to check admin account.
+export const checkAdmin = async()=>{
+    let userCollection = await user();
+    let data = await userCollection.findOne({"username":"admin"});
+    if(data){
+        return{exist:true};
+    }
+
+    return{exist:false};
 
 
 }
