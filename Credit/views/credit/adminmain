@@ -1,0 +1,32 @@
+<head>
+    <title>Main Admin</title>
+    <link rel="stylesheet" href="../public/css/main.css">
+</head>
+<body>
+    <header>
+        <h1 id="admin">Admin Page</h1>
+        <a id="admin_main" href="/">Home</a>
+        <a id="admin_summary" href="/credit/info">Summary Statistics</a>
+    </header>
+    <div id="admin_body">
+        <h2>Approved: </h2>
+            {{#each approved}}
+                <li>Name: {{firstname}} {{lastname}}, Email: {{email}}, Income: {{income}}</li>
+            {{/each}}
+
+        <h2>Denied: </h2>
+            {{#each denied}}
+                <li>Name: {{firstname}} {{lastname}}, Email: {{email}}, Income: {{income}}</li>
+            {{/each}}
+
+        <h2>Didn't Apply Yet: </h2>
+            {{#each none}}
+                <li>Name: {{firstname}} {{lastname}}, Email: {{email}}, Income: {{income}}</li>
+            {{/each}}
+    </div>
+    
+    <button id="logout_admin" name="logout_admin" onclick="location.href='/user/logout'">Logout</button>
+    
+    
+    
+</body>
