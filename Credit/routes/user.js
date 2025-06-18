@@ -21,6 +21,10 @@ router
     if(!req.session.user){
         return res.render('user/register');
     }
+    if(req.session.user.username==='admin'){
+        return res.redirect('/credit/adminmain');
+    }
+
     else{
             if(req.session.user.status===0){
                 return res.redirect('/credit/approved');
@@ -52,9 +56,33 @@ router
     if(!req.session.user){
         return res.redirect('/');
     }
+
     else{
         req.session.destroy();
         res.render('user/logout');
+    }
+
+});
+
+router
+.route('/forbidden')
+.get(async(req,res)=>{
+    if(!req.session.user){
+        return res.redirect('/');
+    }
+
+    if(req.session.user.username !== 'admin'){
+        return res.redirect('/');
+    }
+
+    if(req.session.user.username === 'admin'){
+        return res.redirect('/credit/adminmain');
+    }
+
+
+
+    else{
+        res.render('user/forbidden');
     }
 
 });
@@ -65,6 +93,11 @@ router
     if(!req.session.user){
         return res.render('user/login');
     }
+
+    if(req.session.user.username==='admin'){
+        return res.redirect('/credit/adminmain');
+    }
+
     else{
        if(req.session.user.status===0){
            
@@ -101,7 +134,7 @@ router
             return res.redirect('/credit/declined');
             }
             else{
-                return res.render('credit/usercredit', {firstname: req.session.user.firstname});
+                return res.redirect('/credit/usercredit');
             }
         }
         catch(e){
@@ -121,6 +154,13 @@ router.route('/error')
 router
 .route('/contact')
 .get(async(req,res)=>{
+
+    if(req.session.user){
+        if(req.session.user.username==='admin'){
+            return res.redirect('/credit/adminmain');
+        }
+    }
+
     return res.render('user/contact');
 })
 
